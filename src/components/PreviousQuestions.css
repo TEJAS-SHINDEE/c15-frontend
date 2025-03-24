@@ -1,0 +1,88 @@
+/* Overall container for the page */
+div {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* Title styling */
+h1 {
+  text-align: center;
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+/* Card styling for each company */
+div > div {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+  font-size: 16px;
+  color: #444;
+}
+
+/* Company name and year styling */
+h3 {
+  font-size: 22px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* Questions heading style */
+h4 {
+  font-size: 18px;
+  color: #34495e;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+/* Individual question styling */
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 8px;
+  padding-left: 20px;
+}
+
+/* Numbering styling for questions */
+p strong {
+  font-size: 18px;
+  color: #e74c3c;
+  margin-right: 10px;
+}
+
+/* Add hover effect on each card */
+div > div:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Error and Loading message styles */
+p.error, p.loading {
+  color: #e74c3c;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}

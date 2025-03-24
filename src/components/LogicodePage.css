@@ -1,0 +1,86 @@
+/* LogicodePage.css */
+
+/* General Page Styling */
+.logicode-page {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+    background-color: #f4f7fb;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  h5 {
+    color: #00796b;
+    font-weight: normal;
+  }
+  
+  p {
+    color: #555;
+  }
+  
+  /* List and Card Styling */
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  li:hover {
+    background-color: #e8f5e9;
+    cursor: pointer;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #2d87f0;
+    font-size: 1.2rem;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  h3 {
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  /* Problem Description Styling */
+  .problem-description {
+    font-size: 0.95rem;
+    color: #555;
+    margin-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .logicode-page {
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    li {
+      padding: 10px;
+    }
+  }
+  

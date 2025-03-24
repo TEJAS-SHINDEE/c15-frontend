@@ -1,0 +1,51 @@
+.calendar {
+  display: flex; /* Use flexbox for inline display of months */
+  flex-wrap: wrap; /* Allow wrapping if there's not enough space */
+  margin-top: 20px;
+}
+
+.month {
+  width: calc(25%); /* Set width to 25% of the container, minus margin */
+  margin: 10px; /* Space between months */
+  border: 1px solid #ccc; /* Optional: border around each month */
+  padding: 10px; /* Optional: padding inside each month */
+  border-radius: 5px; /* Optional: rounded corners */
+  background-color: #f9f9f9; /* Optional: background color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: shadow for depth */
+  /* display: flex; */
+  /* justify-content; */
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 days a week */
+  margin-top: 5px; /* Space above the days */
+}
+
+.day {
+  width: 20px; /* Adjust as needed */
+  height: 20px; /* Adjust as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc; /* Border for each day */
+  margin: 2px; /* Space between days */
+  border-radius: 4px; /* Optional: rounded corners for days */
+  transition: background-color 0.3s; /* Smooth transition for hover */
+  font-size:12px;
+  font-weight: 600;
+}
+
+.attempted {
+  background-color: #4caf50; /* Green for attempted days */
+  color: white; /* Text color for attempted days */
+}
+
+.not-attempted {
+  background-color: #f44336; /* Red for not attempted days */
+  color: white; /* Text color for not attempted days */
+}
+
+.day:hover {
+  background-color: #e0e0e0; /* Light gray on hover */
+}
