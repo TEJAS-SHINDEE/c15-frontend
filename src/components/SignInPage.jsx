@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./SignInPage.css";
 
 const SignInPage = ({ onLogin }) => {
@@ -26,6 +26,7 @@ const SignInPage = ({ onLogin }) => {
       }
 
       const data = await response.json();
+      console.log("sign in user data ",data.user);
       onLogin(data.user);
       navigate("/home"); // Redirect to Home Page
     } catch (err) {
@@ -40,6 +41,7 @@ const SignInPage = ({ onLogin }) => {
         <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
         <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required />
         <button type="submit" onClick={handleSubmit}>Sign In</button>
+        <p className="bg-red-600 ">Don't have an account ? <Link to="/signup">  <span className="text-blue-600" >Sign up</span> </Link> </p>
       </form>
       {error && <p style={{ color: "red" }}>{error}</p>}
     </div>

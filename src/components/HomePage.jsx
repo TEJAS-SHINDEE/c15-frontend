@@ -4,6 +4,7 @@ import './HomePage.css';
 const HomePage = () => {
   return (
     <div className="homepage">
+      {/* <Navbar user={user} onLogout={handleLogout} /> */}
       {/* Header */}
       <header className="header">
         <h1>Welcome to Instacampus: Your College Portal</h1>

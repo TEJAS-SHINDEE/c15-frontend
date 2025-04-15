@@ -6,7 +6,7 @@ const ProgressTracker = ({ userId }) => {
   const [selectedYear, setSelectedYear] = useState(new Date().getFullYear()); // Set default to current year
 
   useEffect(() => {
-    fetch(`https://c15-backend-s9le.onrender.com/api/progress/${userId}?year=${selectedYear}`)
+    fetch(`https://c15-backend-s9le.onrender.com/api/${userId}`)
       .then((response) => response.json())
       .then((data) => {
         if (data && Array.isArray(data.attemptedDays)) {

@@ -40,7 +40,6 @@ const ProblemDetailPage = () => {
     fetchProblemDetails();
   }, [id]);
 
-  
 
   if (loading) {
     return <p>Loading problem details...</p>;
@@ -71,10 +70,42 @@ const ProblemDetailPage = () => {
     }
 };
 
-  
-
   return (
     <div >
+      <style>{`
+        .container {
+          max-width: 800px;
+          margin: 40px auto;
+          padding: 20px;
+          border: 1px solid #ccc;
+          border-radius: 8px;
+          font-family: Arial, sans-serif;
+        }
+        h2 {
+          color: #2c3e50;
+        }
+        p {
+          line-height: 1.6;
+        }
+        select, textarea, button {
+          width: 100%;
+          margin-top: 10px;
+          padding: 10px;
+          border-radius: 4px;
+          border: 1px solid #ddd;
+          font-size: 16px;
+        }
+        button {
+          background-color: #3498db;
+          color: white;
+          border: none;
+          cursor: pointer;
+          margin-top: 15px;
+        }
+        button:hover {
+          background-color: #2980b9;
+        }
+      `}</style>
       <div>
       <h2>{problem?.title}</h2>
       <p>{problem?.description}</p>
@@ -97,7 +128,7 @@ const ProblemDetailPage = () => {
           <textarea 
             placeholder="Enter your solution here" 
             rows="10" 
-            style={{ width: "100%" }}
+            style={{ width: "92%" }}
             value={solution}
             onChange={(e) => setSolution(e.target.value)}
           ></textarea>

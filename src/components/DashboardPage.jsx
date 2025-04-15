@@ -1,34 +1,55 @@
 import React, { useState, useEffect } from "react";
 import ProgressTracker from "./ProgressTracker";
 const DashboardPage = ({ user }) => {
-  const [progress, setProgress] = useState(null);
+  const [progress, _setProgress] = useState(null);
+  const [usersDetails, setUsersDetails] = useState([]);
+  const [singleUser, setSingleUser] = useState({});
 
   // Fetch user progress from the API
   useEffect(() => {
     if (user) {
-      const fetchProgress = async () => {
-        const response = await fetch(`https://c15-backend-s9le.onrender.com/api/progress/${user.name}`);
+      // const fetchProgress = async () => {
+      //   const response = await fetch(`https://c15-backend-s9le.onrender.com/api/progress/${user.id}`);
+      //   const data = await response.json();
+      //   setProgress(data);
+      // };
+      // fetchProgress();
+
+      const fetchUsersDetails = async () => {
+        const response = await fetch(`https://c15-backend-s9le.onrender.com/api/users`);
         const data = await response.json();
-        setProgress(data);
+        setUsersDetails(data);
       };
-      fetchProgress();
+      fetchUsersDetails();
     }
-  }, [user]);
 
-  if (!user) {
-    return <p>Please log in to access the dashboard.</p>;
-  }
+    const singleUser = usersDetails?.find((usr) => {
+      return usr._id === user.id;
+    });
 
-  // console.log(user);
+    setSingleUser(singleUser);
+  },[singleUser]);
+
+  // if (!user) {
+  //   return <p>Please log in to access the dashboard.</p>;
+  // }
+
+  console.log("profile user ",user.id);    // all above working
+  console.log('users data ',usersDetails);   
+  console.log('single users data ',user?.id);
+
+
+
   // console.log(user.gr);
   return (
     <div style={styles.dashboard}>
-      <h2>Welcome, {user.name}</h2>
+      <h2>Welcome, {singleUser?.name}</h2>
       <div style={styles.infoBox}>
         <h3>User Information</h3>
-        <p><strong>Name:</strong> {user.name}</p>
-        <p><strong>Email:</strong> {user.email}</p>
-        <p><strong>Role:</strong> {user.name.includes("admin") ? "Admin" : "Student" }</p>
+        <p><strong>Name :</strong> {singleUser?.name}</p>
+        <p><strong>Email :</strong> {singleUser?.email}</p>
+        <p><strong>Role :</strong> {singleUser?.role }</p>
+        <p><strong>GR No :</strong> {singleUser?.gr }</p>
 
       </div>
       
@@ -43,7 +64,7 @@ const DashboardPage = ({ user }) => {
       {progress ? (
         <div style={styles.levelBox}>
           {/* <h3>Monthly Progress</h3> */}
-          <ProgressTracker/>
+          <ProgressTracker userId={user.id}/>
           <p>📅 Monthly Solved: {progress.monthlySolved} problems</p>
           <p>📈 Monthly Progress: {progress.monthlySolved}%</p>
           <p>🚀 Keep up the good work!</p>

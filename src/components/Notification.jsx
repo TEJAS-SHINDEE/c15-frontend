@@ -123,6 +123,7 @@ const styles = {
     left: "60px",
     top: "0",
     backgroundColor: "#fff",
+    color:"black",
     border: "1px solid #ccc",
     borderRadius: "8px",
     width: "300px",

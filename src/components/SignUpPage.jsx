@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./SignUpPage.css";
 
-const SignUpPage = () => {
+const SignUpPage = ({ onLogin }) => {
   const [formData, setFormData] = useState({ name: "", gr : "", email: "", password: "" });
   const [error, setError] = useState(null);
   const navigate = useNavigate();
@@ -27,7 +27,10 @@ const SignUpPage = () => {
 
       const data = await response.json();
       alert(data.message);
-      navigate("/home"); // Redirect to Sign In after successful registration
+      // navigate("/home"); // Redirect to Sign In after successful registration
+      onLogin(data.user);
+      console.log("user on signup ",data.user);
+      navigate("/home"); // Redirect to Home Page
     } catch (err) {
       setError(err.message);
     }
@@ -43,6 +46,8 @@ const SignUpPage = () => {
         Enter Password : <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required />
         Enter Role : <input type="text" name="role" placeholder="Role" value={formData.role} onChange={handleChange} required />
         <button type="submit">Sign Up</button>
+        <p>Already user <Link to="/signin">  <span className="bg-blue-600" >Sign in</span> </Link> </p>
+        
       </form>
       {error && <p style={{ color: "red" }}>{error}</p>}
     </div>

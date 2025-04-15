@@ -4,7 +4,7 @@ import "./AuthPage.css";
 
 const AuthPage = ({ onAuth }) => {
   const [isSignUp, setIsSignUp] = useState(false); // Toggle between Sign In/Sign Up
-  const [formData, setFormData] = useState({ name: "", email: "", password: "" });
+  const [formData, setFormData] = useState({ name: "", email: "", password: "",gr:"", role:"" });
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -71,6 +71,7 @@ const AuthPage = ({ onAuth }) => {
           onChange={handleChange}
           required
         />
+        
         <input
           type="password"
           name="password"

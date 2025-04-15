@@ -21,6 +21,9 @@ const JobPage = () => {
   const handlePyqs = () => {
     navigate("/pyqs"); // Navigate to InterviewExperiencePage
   }; 
+  const handlePlacedStudents = () => {
+    navigate("/jobs/placed-students"); // Navigate to Placed Students
+  }; 
 
   // const handleViewDrives = () => {
   //   navigate("/jobs"); // Navigate to the JobsPage route
@@ -71,7 +74,7 @@ const JobPage = () => {
           <p style={styles.blockContent}>
             See the list of students placed in various companies.
           </p>
-          <button style={styles.button}>View List</button>
+          <button style={styles.button} onClick={handlePlacedStudents}>View List</button>
         </div>
       </div>
     </div>
