@@ -1,5 +1,6 @@
 import React from "react";
 import './HomePage.css';  
+import { Footer } from "./footer";
 
 const HomePage = () => {
   return (
@@ -61,9 +62,11 @@ const HomePage = () => {
       </section>
 
     {/* {/* Footer */}
-      <footer className="footer">
+      {/* <footer className="footer">
         <p>© 2024 Instacampus. All Rights Reserved.</p>
-      </footer>
+      </footer> */}
+
+      <Footer />
     </div>
   );
 };
